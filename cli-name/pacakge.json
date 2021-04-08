@@ -1,8 +1,0 @@
-{
-  "name": "cli-name",
-  "description": "Some desc",
-  "version": "0.0.1",
-  "bin": {
-    "cli-name": "index.js"
-  }
-}
