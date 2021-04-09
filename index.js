@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 const path = require('path');
+const alert = require('cli-alerts');
 const copy = require('copy-template-dir');
+const { green: g, dim: d } = require('chalk');
+
 const init = require('./utils/init');
 const ask = require('./utils/ask');
 
@@ -26,17 +29,25 @@ const ask = require('./utils/ask');
   }
   // join for all OS
   // path join has ability to recogize OS and create path for specific OS
-  const inDir = path.join(__dirname, `template`); 
-  const outDir = path.join(process.cwd(), vars.name); 
+  const outDir = vars.name;
+  const inDirPath = path.join(__dirname, `template`); 
+  const outDirPath = path.join(process.cwd(), outDir); 
   
-  copy(inDir, outDir, vars, (err, createdFiles) => {
+  copy(inDirPath, outDirPath, vars, (err, createdFiles) => {
     if (err) throw err
-    console.log(`Creating files in ./${vars.name}`);
+
+    console.log(d(`\nCreating files in ${g(`./${outDir}`)} directory:\n`));
+
     createdFiles.forEach(filePath => {
       const fileName = path.basename(filePath);
-      console.log(`Created ${fileName}`);
+      console.log(`${g(`CREATED`)} ${fileName}`);
     })
-    console.log('Done!')
+
+    alert({
+      type: `success`,
+      name: `ALL DONE`,
+      msg: `\n\n${createdFiles.length} files created in ${d(`./${outDir}`)} directory`,
+    })
   })
 
 })();
