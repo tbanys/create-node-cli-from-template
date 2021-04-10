@@ -28,7 +28,7 @@ const commands = {
 };
 
 const helpText = meowHelper({
-  name: 'quiz',
+  name: 'create-node-cli',
   flags,
   commands,
 });

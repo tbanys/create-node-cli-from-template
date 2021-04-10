@@ -7,8 +7,8 @@ module.exports = ({ clear  = true }) => {
   unhandled();
 
   welcome({
-    title: 'cli-quiz',
-    tagLine: 'by Tautvydas Banys',
+    title: 'cli-img',
+    tagLine: 'by Tautvydas',
     description: pkgJSON.description,
     version: pkgJSON.version,
     bgColor: `#FADC00`,

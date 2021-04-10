@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * cli-quiz
- * This is a CLI
+ * cli-img
+ * Desc
  * 
- * @author Tautvydas Banys <>
+ * @author Tautvydas <tb.com>
  */
 
 const init = require('./utils/init');

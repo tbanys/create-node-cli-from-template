@@ -3,7 +3,7 @@ const welcome = require('cli-welcome');
 const checkNode = require('cli-check-node');
 const unhandled = require('cli-handle-unhandled');
 
-module.exports = () => {
+module.exports = ({ clear }) => {
   unhandled();
 
   welcome({
@@ -14,7 +14,7 @@ module.exports = () => {
     bgColor: `#FADC00`,
     color: `#000000`,
     bold: true,
-    clear: true,
+    clear,
   });
 
   checkNode('10');
